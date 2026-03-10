@@ -149,12 +149,12 @@ export function RFIDRegistration() {
                 {/* Serial Connection Section */}
                 <div className="section">
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '2px solid #667eea', paddingBottom: '10px', marginBottom: '15px' }}>
-                        <h2 style={{ margin: 0, borderBottom: 'none', paddingBottom: 15 }}>Status połączenia z czytnikiem:</h2>
+                        <h2 style={{ margin: 0, borderBottom: 'none', paddingBottom: 18 }}>Status połączenia z czytnikiem:</h2>
                         <div className="status-badge">
                             {isConnected ? (
-                                <span className="status-connected">Połączono z czytnikiem</span>
+                                <span className="status-connected">Połączono</span>
                             ) : (
-                                <span className="status-disconnected">Nie połączono z czytnikiem</span>
+                                <span className="status-disconnected">Nie połączono</span>
                             )}
                         </div>
                     </div>
