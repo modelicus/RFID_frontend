@@ -28,7 +28,9 @@ export function RFIDRegistration() {
             setIsConnected(true);
             readFromSerial(selectedPort);
         } catch (err) {
-            setError(`Błąd łączenia z czytnikiem ${err instanceof Error ? err.message : String(err)}`);
+            if ((err as Error).name !== 'NotFoundError') {
+                setError(`Błąd łączenia z czytnikiem ${err instanceof Error ? err.message : String(err)}`);
+            }
             setIsConnected(false);
         }
     };
