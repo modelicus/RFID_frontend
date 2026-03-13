@@ -9,7 +9,7 @@ interface SerialPort {
 }
 
 // API Configuration - change this for production
-const API_ENDPOINT = 'http://localhost:3000/api/register';
+const API_ENDPOINT = '192.168.1.234/api/register';
 
 export function RFIDRegistration() {
     const [rfid, setRfid] = useState('');
