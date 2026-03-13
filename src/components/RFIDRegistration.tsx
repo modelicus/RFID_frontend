@@ -14,7 +14,6 @@ const API_ENDPOINT = 'http://localhost:3000/api/register';
 export function RFIDRegistration() {
     const [rfid, setRfid] = useState('');
     const [name, setName] = useState('');
-    const [port, setPort] = useState<SerialPort | null>(null);
     const [isConnected, setIsConnected] = useState(false);
     const [response, setResponse] = useState<{ status: string; rfid: string; name: string } | null>(null);
     const [error, setError] = useState('');
@@ -26,7 +25,6 @@ export function RFIDRegistration() {
             setError('');
             const selectedPort = await (navigator as any).serial.requestPort();
             await selectedPort.open({ baudRate: 9600 });
-            setPort(selectedPort);
             setIsConnected(true);
             readFromSerial(selectedPort);
         } catch (err) {
@@ -78,21 +76,6 @@ export function RFIDRegistration() {
                 setError(`Błąd czytnika: ${err instanceof Error ? err.message : String(err)}`);
             }
             setIsConnected(false);
-        }
-    };
-
-    // Disconnect from serial port
-    const disconnectSerial = async () => {
-        try {
-            if (port) {
-                await port.close();
-                setPort(null);
-                setIsConnected(false);
-                setRfid('');
-                setError('');
-            }
-        } catch (err) {
-            setError(`Nie udało się rozłączyć czytnika: ${err instanceof Error ? err.message : String(err)}`);
         }
     };
 
