@@ -84,7 +84,7 @@ export function RFIDRegistration() {
         e.preventDefault();
 
         if (!rfid.trim()) {
-            setError('Zeskanuj tag przed wysłaniem');
+            setError('Zeskanuj opaskę przed wysłaniem');
             return;
         }
         if (!name.trim()) {

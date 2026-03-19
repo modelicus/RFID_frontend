@@ -96,8 +96,7 @@
     margin: 0;
     background:
         radial-gradient(ellipse 120% 80% at 50% 0%, var(--magenta-rich) 0%, transparent 60%),
-        radial-gradient(ellipse 100% 60% at 80% 100%, var(--magenta-deep) 0%, transparent 50%),
-        radial-gradient(ellipse 80% 50% at 20% 80%, rgba(154, 19, 80, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse 120% 80% at 50% 100%, var(--magenta-rich) 0%, transparent 60%),
         var(--burgundy-dark);
     overflow-x: hidden;
     overflow-y: auto;
@@ -141,7 +140,7 @@
     -webkit-backdrop-filter: blur(40px);
     border: 1px solid rgba(196, 149, 106, 0.2);
     border-radius: 2px;
-    padding: 36px 48px 32px;
+    padding: 28px 48px 32px;
     max-width: 540px;
     width: 100%;
     margin: 24px;
@@ -177,7 +176,7 @@
     display: block;
     width: 140px;
     height: auto;
-    margin: 0 auto 12px;
+    margin: 0 auto 6px;
     filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(636%) hue-rotate(346deg) brightness(87%) contrast(86%);
     opacity: 0.9;
 }
@@ -204,7 +203,7 @@
     font-weight: 400;
     font-size: 42px;
     color: var(--text-primary);
-    margin: 0 0 6px;
+    margin: 10px 0 6px;
     letter-spacing: 0.02em;
     line-height: 1.15;
 }
