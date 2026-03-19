@@ -1,212 +1,710 @@
+/* ═══════════════════════════════════════════════════════════
+   EMPORIO ARMANI — POWER OF YOU — Registration Interface
+   Deep magenta luxury with rose gold accents
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Font Faces ── */
+@font-face {
+    font-family: 'Didot LT Pro';
+    src: url('../assets/fonts/DidotLTPro-Roman.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Didot LT Pro';
+    src: url('../assets/fonts/DidotLTPro-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Didot Open Face';
+    src: url('../assets/fonts/DidotOpenFaceStd.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Futura BQ';
+    src: url('../assets/fonts/FuturaBQLight.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Futura BQ';
+    src: url('../assets/fonts/FuturaBQBook.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Futura BQ';
+    src: url('../assets/fonts/FuturaBQMedium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Futura BQ';
+    src: url('../assets/fonts/FuturaBQDemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: block;
+}
+
+/* ── CSS Variables ── */
+:root {
+    --magenta-deep: #5A0A2A;
+    --magenta-rich: #7B0E3A;
+    --magenta-mid: #9A1350;
+    --magenta-bright: #B81B68;
+    --magenta-glow: #D42A7C;
+    --burgundy-dark: #2A0415;
+    --burgundy-shadow: #1A020D;
+    --rose-gold: #C4956A;
+    --rose-gold-light: #D4A87E;
+    --rose-gold-pale: #E8CDB0;
+    --gold-shimmer: #C9A96E;
+    --cream: #F5EDE4;
+    --cream-muted: #E8DDD2;
+    --white-warm: #FDF8F4;
+    --text-primary: #FFFFFF;
+    --text-light: rgba(255, 255, 255, 0.95);
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.45);
+    --text-gold: #D4A87E;
+    --error-red: #FF6B6B;
+    --success-gold: #C9A96E;
+}
+
+/* ── Container ── */
 .rfid-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
-    background: linear-gradient(135deg, #292b35 0%, #1a1123 100%);
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    background:
+        radial-gradient(ellipse 120% 80% at 50% 0%, var(--magenta-rich) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 60% at 80% 100%, var(--magenta-deep) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 50% at 20% 80%, rgba(154, 19, 80, 0.3) 0%, transparent 50%),
+        var(--burgundy-dark);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
 }
 
+/* Subtle noise texture overlay */
+.rfid-container::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ambient glow */
+.rfid-container::after {
+    content: '';
+    position: fixed;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(184, 27, 104, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ── Card ── */
 .card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-    padding: 40px;
-    max-width: 500px;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(
+        170deg,
+        rgba(90, 10, 42, 0.7) 0%,
+        rgba(42, 4, 21, 0.85) 100%
+    );
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid rgba(196, 149, 106, 0.2);
+    border-radius: 2px;
+    padding: 36px 48px 32px;
+    max-width: 540px;
     width: 100%;
+    margin: 24px;
+    box-shadow:
+        0 0 0 1px rgba(196, 149, 106, 0.06),
+        0 24px 80px rgba(0, 0, 0, 0.5),
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    animation: cardReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
 }
 
-.card h1 {
-    color: #333;
-    margin-bottom: 30px;
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ── Brand Header ── */
+.brand-header {
     text-align: center;
-    font-size: 28px;
+    margin-bottom: 20px;
+    animation: fadeIn 0.6s ease 0.3s both;
 }
 
-.card h2 {
-    color: #555;
-    font-size: 18px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #667eea;
-    padding-bottom: 10px;
+/* ── Logo images ── */
+.brand-logo-img {
+    display: block;
+    width: 140px;
+    height: auto;
+    margin: 0 auto 12px;
+    filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(636%) hue-rotate(346deg) brightness(87%) contrast(86%);
+    opacity: 0.9;
 }
 
-.card h3 {
-    color: #333;
-    font-size: 16px;
-    margin-bottom: 10px;
+.footer-logo-img {
+    display: inline-block;
+    width: 64px;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(636%) hue-rotate(346deg) brightness(87%) contrast(86%);
+    opacity: 0.3;
 }
 
+.modal-logo-img {
+    display: block;
+    width: 100px;
+    height: auto;
+    margin: 0 auto 8px;
+    filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(636%) hue-rotate(346deg) brightness(87%) contrast(86%);
+    opacity: 0.8;
+}
+
+.brand-title {
+    font-family: 'Didot LT Pro', 'Didot', 'Georgia', serif;
+    font-weight: 400;
+    font-size: 42px;
+    color: var(--text-primary);
+    margin: 0 0 6px;
+    letter-spacing: 0.02em;
+    line-height: 1.15;
+}
+
+.brand-subtitle {
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-top: 10px;
+}
+
+/* ── Divider ── */
+.divider {
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
+    margin: 0 auto;
+    opacity: 0.6;
+}
+
+/* ── Section ── */
 .section {
-    margin-bottom: 30px;
+    margin-bottom: 0;
+    animation: fadeIn 0.5s ease 0.4s both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Connection Strip (staff utility, bottom of card) ── */
+.connection-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(196, 149, 106, 0.06);
+}
+
+.btn-connect {
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 500;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose-gold);
+    background: none;
+    border: 1px solid rgba(196, 149, 106, 0.25);
+    border-radius: 1px;
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.btn-connect:hover {
+    opacity: 1;
+    border-color: var(--rose-gold);
+    background: rgba(196, 149, 106, 0.06);
 }
 
 .status-badge {
-    margin-bottom: 15px;
     text-align: center;
 }
 
 .status-connected {
-    display: inline-block;
-    background-color: #4caf50;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--success-gold);
+    padding: 6px 14px;
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    border-radius: 1px;
+    background: rgba(201, 169, 110, 0.06);
+    opacity: 0.7;
+}
+
+.status-connected::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--success-gold);
+    box-shadow: 0 0 8px rgba(201, 169, 110, 0.5);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
 }
 
 .status-disconnected {
-    display: inline-block;
-    background-color: #f44336;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
-    font-size: 14px;
-    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 400;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1px;
+    background: rgba(255, 255, 255, 0.02);
+    opacity: 0.7;
 }
 
-.button-group {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
+.status-disconnected::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
 }
 
+/* ── Buttons ── */
 .btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 500;
     font-size: 14px;
-    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 18px 44px;
+    border: none;
+    border-radius: 1px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    min-width: 140px;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .btn:disabled {
-    opacity: 0.6;
+    opacity: 0.3;
     cursor: not-allowed;
 }
 
 .btn-primary {
-    background-color: #667eea;
-    color: white;
+    background: linear-gradient(135deg, var(--rose-gold) 0%, var(--gold-shimmer) 100%);
+    color: var(--burgundy-dark);
+    box-shadow: 0 4px 20px rgba(196, 149, 106, 0.25);
 }
 
 .btn-primary:hover:not(:disabled) {
-    background-color: #5568d3;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 6px 30px rgba(196, 149, 106, 0.4);
+    transform: translateY(-1px);
 }
 
-.btn-secondary {
-    background-color: #ff9800;
-    color: white;
-}
-
-.btn-secondary:hover:not(:disabled) {
-    background-color: #e68900;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+.btn-primary:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 12px rgba(196, 149, 106, 0.2);
 }
 
 .btn-success {
-    background-color: #4caf50;
-    color: white;
+    background: linear-gradient(135deg, var(--rose-gold) 0%, var(--gold-shimmer) 100%);
+    color: var(--burgundy-dark);
     width: 100%;
+    box-shadow: 0 4px 20px rgba(196, 149, 106, 0.25);
+    margin-top: 8px;
 }
 
 .btn-success:hover:not(:disabled) {
-    background-color: #45a049;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+    box-shadow: 0 6px 30px rgba(196, 149, 106, 0.4);
+    transform: translateY(-1px);
+}
+
+.btn-success:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+}
+
+/* ── Form ── */
+.form-section {
+    animation: formReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes formReveal {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Disabled form state ── */
+.form-disabled {
+    opacity: 0.35;
+    pointer-events: none;
+    filter: grayscale(0.3);
+}
+
+.form-disabled .input-field,
+.form-disabled .select-field {
+    cursor: not-allowed;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    position: relative;
 }
 
 .form-group label {
     display: block;
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--rose-gold-light);
     margin-bottom: 8px;
-    color: #333;
-    font-weight: 600;
-    font-size: 14px;
 }
 
 .input-field {
     width: 100%;
-    padding: 12px;
-    border: 2px solid #e0e0e0;
-    border-radius: 6px;
-    font-size: 14px;
-    transition: all 0.3s ease;
+    padding: 16px 18px;
+    border: 1px solid rgba(196, 149, 106, 0.2);
+    border-radius: 1px;
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
     box-sizing: border-box;
-    font-family: inherit;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 .input-field:focus {
     outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
-    background-color: #333;
+    border-color: var(--rose-gold);
+    background: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 0 0 1px rgba(196, 149, 106, 0.15);
 }
 
 .input-field::placeholder {
-    color: #bbb;
+    color: rgba(255, 255, 255, 0.25);
+    font-weight: 300;
 }
 
-.response-success {
-    background-color: #f0f7f4;
-    border-left: 4px solid #4caf50;
-    padding: 15px;
-    border-radius: 6px;
+/* ── Select field ── */
+.select-field {
+    width: 100%;
+    padding: 16px 40px 16px 18px;
+    border: 1px solid rgba(196, 149, 106, 0.2);
+    border-radius: 1px;
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23C4956A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
 }
 
-.response-success h3 {
-    color: #2e7d32;
+.select-field:focus {
+    outline: none;
+    border-color: var(--rose-gold);
+    background-color: rgba(255, 255, 255, 0.09);
+    box-shadow: 0 0 0 1px rgba(196, 149, 106, 0.15);
 }
 
-.response-success p {
-    color: #1b5e20;
-    margin: 8px 0;
-    font-size: 14px;
+.select-field option {
+    background: var(--burgundy-dark);
+    color: var(--text-primary);
+    font-family: 'Futura BQ', 'Futura', sans-serif;
 }
 
+.select-field.placeholder-shown {
+    color: rgba(255, 255, 255, 0.25);
+}
+
+/* ── Form Row (side by side) ── */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.form-row .form-group {
+    margin-bottom: 18px;
+}
+
+/* ── RFID scan status ── */
+.rfid-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1px;
+    margin-bottom: 22px;
+    transition: all 0.4s ease;
+}
+
+.rfid-waiting {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.rfid-scanned {
+    background: rgba(201, 169, 110, 0.08);
+    border-color: rgba(201, 169, 110, 0.3);
+}
+
+.rfid-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+}
+
+.rfid-waiting .rfid-dot {
+    background: rgba(255, 255, 255, 0.2);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.rfid-scanned .rfid-dot {
+    background: var(--success-gold);
+    box-shadow: 0 0 12px rgba(201, 169, 110, 0.5);
+}
+
+.rfid-label {
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    transition: color 0.4s ease;
+}
+
+.rfid-waiting .rfid-label {
+    color: var(--text-muted);
+}
+
+.rfid-scanned .rfid-label {
+    color: var(--success-gold);
+}
+
+/* ── Error Section ── */
 .response-error {
-    background-color: #ffebee;
-    border-left: 4px solid #f44336;
-    padding: 15px;
-    border-radius: 6px;
+    text-align: center;
+    padding: 18px 24px;
+    border: 1px solid rgba(255, 107, 107, 0.25);
+    border-radius: 1px;
+    background: rgba(255, 107, 107, 0.08);
+    margin-top: 20px;
+    animation: fadeIn 0.3s ease forwards;
 }
 
 .response-error h3 {
-    color: #c62828;
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--error-red);
+    margin: 0 0 8px;
 }
 
 .response-error p {
-    color: #b71c1c;
-    margin: 8px 0;
-    font-size: 14px;
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    color: rgba(255, 107, 107, 0.85);
+    margin: 0;
 }
 
-@media (max-width: 600px) {
+/* ── Footer ── */
+.card-footer {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(196, 149, 106, 0.1);
+}
+
+/* ── Success Modal Overlay ── */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(26, 2, 13, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: overlayIn 0.3s ease forwards;
+}
+
+@keyframes overlayIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-card {
+    background: linear-gradient(
+        170deg,
+        rgba(90, 10, 42, 0.8) 0%,
+        rgba(42, 4, 21, 0.92) 100%
+    );
+    border: 1px solid rgba(196, 149, 106, 0.25);
+    border-radius: 2px;
+    padding: 48px 44px 40px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow:
+        0 0 0 1px rgba(196, 149, 106, 0.08),
+        0 32px 100px rgba(0, 0, 0, 0.6),
+        0 12px 40px rgba(0, 0, 0, 0.4);
+    animation: modalIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-name {
+    font-family: 'Didot LT Pro', 'Didot', 'Georgia', serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: var(--text-primary);
+    margin: 0 0 8px;
+    letter-spacing: 0.02em;
+}
+
+.modal-subtitle {
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--rose-gold-light);
+    margin: 0 0 32px;
+}
+
+.modal-btn {
+    min-width: 160px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
     .card {
-        padding: 25px;
+        padding: 36px 28px 32px;
+        margin: 16px;
     }
 
-    .card h1 {
-        font-size: 24px;
+    .brand-title {
+        font-size: 34px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 
     .btn {
-        padding: 8px 16px;
-        font-size: 13px;
-        min-width: 120px;
+        padding: 16px 32px;
+        font-size: 12px;
     }
 
-    .input-field {
-        padding: 10px;
+    .modal-card {
+        padding: 36px 28px 32px;
     }
 }

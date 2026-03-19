@@ -24,6 +24,7 @@ dist-electron/
 *.njsproj
 *.sln
 *.sw?
+fonts
 # Environment variables
 .env
 .env.local

@@ -1,5 +1,1 @@
-/* App specific styles */
-#root {
-  min-height: 100vh;
-  width: 100%;
-}
+/* App — no additional styles needed, handled by index.css and component CSS */
