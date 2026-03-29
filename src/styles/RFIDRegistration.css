@@ -415,6 +415,11 @@
     cursor: not-allowed;
 }
 
+.form-disabled .regulamin-link {
+    pointer-events: auto;
+    cursor: pointer;
+}
+
 .form-group {
     margin-bottom: 18px;
     position: relative;
@@ -595,6 +600,137 @@
     margin: 0;
 }
 
+/* ── Regulamin checkbox row ── */
+.regulamin-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    margin-top: 6px;
+}
+
+.regulamin-checkbox {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    border: 1px solid rgba(196, 149, 106, 0.2);
+    border-radius: 1px;
+    background: rgba(255, 255, 255, 0.06);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.regulamin-checkbox:checked {
+    background: var(--rose-gold);
+    border-color: var(--rose-gold);
+}
+
+.regulamin-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 5px;
+    height: 9px;
+    border: 1.5px solid var(--burgundy-dark);
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);
+}
+
+.regulamin-label {
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.03em;
+    color: var(--text-secondary);
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.regulamin-link {
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 400;
+    letter-spacing: inherit;
+    color: var(--rose-gold-light);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.2s ease;
+}
+
+.regulamin-link:hover {
+    color: var(--rose-gold-pale);
+}
+
+/* ── Regulamin modal ── */
+.modal-card.regulamin-modal {
+    max-width: 620px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--text-secondary);
+}
+
+.regulamin-content {
+    overflow-y: auto;
+    margin: 0 0 24px;
+    padding-right: 8px;
+    flex: 1;
+    text-align: left;
+}
+
+.regulamin-content p {
+    font-family: 'Futura BQ', 'Futura', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin: 0 0 14px;
+}
+
+.regulamin-content p:nth-child(odd) {
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--rose-gold-light);
+    margin-bottom: 6px;
+}
+
+.regulamin-modal .modal-btn {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* ── Footer ── */
 .card-footer {
     text-align: center;
@@ -741,6 +877,11 @@
     }
 
     .btn-success {
+        margin-top: 4px;
+    }
+
+    .regulamin-row {
+        margin-bottom: 12px;
         margin-top: 4px;
     }
 
