@@ -142,6 +142,8 @@
     border-radius: 2px;
     padding: 28px 48px 32px;
     max-width: 540px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
     width: 100%;
     margin: 24px;
     box-shadow:
@@ -174,28 +176,20 @@
 /* ── Logo images ── */
 .brand-logo-img {
     display: block;
-    width: 140px;
+    width: 200px;
     height: auto;
     margin: 0 auto 6px;
     filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(636%) hue-rotate(346deg) brightness(87%) contrast(86%);
     opacity: 0.9;
 }
 
-.footer-logo-img {
-    display: inline-block;
-    width: 64px;
-    height: auto;
-    filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(636%) hue-rotate(346deg) brightness(87%) contrast(86%);
-    opacity: 0.3;
-}
-
 .modal-logo-img {
     display: block;
-    width: 100px;
+    width: 120px;
     height: auto;
     margin: 0 auto 8px;
     filter: brightness(0) saturate(100%) invert(72%) sepia(18%) saturate(636%) hue-rotate(346deg) brightness(87%) contrast(86%);
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 .brand-title {
@@ -215,7 +209,7 @@
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: var(--text-secondary);
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 /* ── Divider ── */
@@ -223,7 +217,7 @@
     width: 40px;
     height: 1px;
     background: linear-gradient(90deg, transparent, var(--rose-gold), transparent);
-    margin: 0 auto;
+    margin: 24px auto;
     opacity: 0.6;
 }
 
@@ -682,15 +676,11 @@
     min-width: 160px;
 }
 
-/* ── Responsive ── */
+/* ── Responsive width ── */
 @media (max-width: 560px) {
     .card {
         padding: 36px 28px 32px;
         margin: 16px;
-    }
-
-    .brand-title {
-        font-size: 34px;
     }
 
     .form-row {
@@ -705,5 +695,118 @@
 
     .modal-card {
         padding: 36px 28px 32px;
+    }
+}
+
+/* ── Responsive height — 15" Windows at 125% DPI (~864px viewport) ── */
+@media (max-height: 820px) {
+    .card {
+        padding: 20px 48px 20px;
+        margin: 16px;
+    }
+
+    .brand-header {
+        margin-bottom: 12px;
+    }
+
+    .brand-logo-img {
+        width: 160px;
+    }
+
+    .divider {
+        margin: 8px auto;
+    }
+
+    .rfid-status {
+        padding: 12px 20px;
+        margin-bottom: 14px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .form-row .form-group {
+        margin-bottom: 12px;
+    }
+
+    .input-field,
+    .select-field {
+        padding: 11px 18px;
+        font-size: 15px;
+    }
+
+    .select-field {
+        padding: 11px 40px 11px 18px;
+    }
+
+    .btn-success {
+        margin-top: 4px;
+    }
+
+    .connection-strip {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+}
+
+/* ── Responsive height — 13" Windows at 125% DPI (~720px viewport) ── */
+@media (max-height: 720px) {
+    .card {
+        padding: 16px 48px 16px;
+    }
+
+    .brand-logo-img {
+        width: 130px;
+    }
+
+    .divider {
+        margin: 6px auto;
+    }
+
+    .brand-header {
+        margin-bottom: 8px;
+    }
+
+    .brand-subtitle {
+        font-size: 13px;
+    }
+
+    .rfid-status {
+        padding: 10px 20px;
+        margin-bottom: 10px;
+    }
+
+    .form-group {
+        margin-bottom: 8px;
+    }
+
+    .form-row .form-group {
+        margin-bottom: 8px;
+    }
+
+    .input-field,
+    .select-field {
+        padding: 9px 18px;
+        font-size: 14px;
+    }
+
+    .select-field {
+        padding: 9px 40px 9px 18px;
+    }
+
+    .form-group label {
+        font-size: 11px;
+        margin-bottom: 5px;
+    }
+
+    .btn {
+        padding: 12px 44px;
+        font-size: 12px;
+    }
+
+    .connection-strip {
+        margin-top: 8px;
+        padding-top: 8px;
     }
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import '../styles/RFIDRegistration.css';
-import logoSvg from '../assets/emporio-armani.svg';
+import logoSvg from '../assets/poy-logo.svg';
 
 interface SerialPort {
     open: () => Promise<void>;
@@ -150,9 +150,8 @@ export function RFIDRegistration() {
             <div className="card">
                 {/* Brand Header */}
                 <div className="brand-header">
-                    <img src={logoSvg} alt="Emporio Armani" className="brand-logo-img" />
+                    <img src={logoSvg} alt="Power of You" className="brand-logo-img" />
                     <div className="divider" />
-                    <h1 className="brand-title">Power of You</h1>
                     <p className="brand-subtitle">Rejestracja uczestnika</p>
                 </div>
 
@@ -250,11 +249,6 @@ export function RFIDRegistration() {
                     </div>
                 )}
 
-                {/* Footer */}
-                <div className="card-footer">
-                    <img src={logoSvg} alt="Emporio Armani" className="footer-logo-img" />
-                </div>
-
                 {/* Staff utility: connection status */}
                 <div className="connection-strip">
                     <div className="status-badge">
@@ -276,7 +270,7 @@ export function RFIDRegistration() {
             {response && (
                 <div className="modal-overlay" onClick={handleSuccessDismiss}>
                     <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-                        <img src={logoSvg} alt="Emporio Armani" className="modal-logo-img" />
+                        <img src={logoSvg} alt="Power of You" className="modal-logo-img" />
                         <div className="divider" style={{ margin: '16px auto' }} />
                         <h3 className="modal-name">{response.name}</h3>
                         <p className="modal-subtitle">Zarejestrowano</p>

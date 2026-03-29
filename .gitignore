@@ -25,6 +25,10 @@ dist-electron/
 *.sln
 *.sw?
 fonts
+icon.iconset
+logo
+build
+
 # Environment variables
 .env
 .env.local

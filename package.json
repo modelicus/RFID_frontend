@@ -1,5 +1,5 @@
 {
-  "name": "rfid-frontend",
+  "name": "poy-register",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,13 +14,19 @@
   },
   "build": {
     "appId": "com.nvlv.rfid-registration",
-    "productName": "RFID Registration",
+    "productName": "Power of You — Rejestracja",
     "files": [
       "dist/**",
       "dist-electron/**"
     ],
     "directories": {
       "output": "release/"
+    },
+    "mac": {
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "icon": "build/icon.ico"
     }
   },
   "dependencies": {
