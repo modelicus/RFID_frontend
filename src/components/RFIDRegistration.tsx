@@ -10,7 +10,7 @@ interface SerialPort {
 }
 
 // API Configuration - change this for production
-const API_ENDPOINT = 'http://localhost:3000/api/register';
+const API_ENDPOINT = 'http://192.168.1.234:3000/api/register';
 
 const AGE_GROUPS = ['18-25', '26-34', '35-45', '46-55', '55+'] as const;
 const GENDERS = ['kobieta', 'mężczyzna', 'inna'] as const;

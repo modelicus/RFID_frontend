@@ -533,8 +533,9 @@
 }
 
 .rfid-scanned {
-    background: rgba(201, 169, 110, 0.08);
-    border-color: rgba(201, 169, 110, 0.3);
+    background: linear-gradient(135deg, var(--rose-gold) 0%, var(--gold-shimmer) 100%);
+    border-color: var(--gold-shimmer);
+    box-shadow: 0 4px 20px rgba(196, 149, 106, 0.25);
 }
 
 .rfid-dot {
@@ -551,8 +552,8 @@
 }
 
 .rfid-scanned .rfid-dot {
-    background: var(--success-gold);
-    box-shadow: 0 0 12px rgba(201, 169, 110, 0.5);
+    background: var(--burgundy-dark);
+    box-shadow: 0 0 8px rgba(42, 4, 21, 0.4);
 }
 
 .rfid-label {
@@ -568,7 +569,8 @@
 }
 
 .rfid-scanned .rfid-label {
-    color: var(--success-gold);
+    color: var(--burgundy-dark);
+    font-weight: 600;
 }
 
 /* ── Error Section ── */
