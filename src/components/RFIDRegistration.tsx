@@ -298,25 +298,16 @@ export function RFIDRegistration() {
                 <div className="modal-overlay" onClick={() => setRegulaminOpen(false)}>
                     <div className="modal-card regulamin-modal" onClick={(e) => e.stopPropagation()}>
                         <button className="modal-close" onClick={() => setRegulaminOpen(false)}>✕</button>
-                        <h3 className="modal-name">Regulamin</h3>
+                        <h3 className="modal-name">Informacja o przetwarzaniu danych</h3>
                         <div className="divider" style={{ margin: '16px auto' }} />
                         <div className="regulamin-content">
-                            <p>§1. Postanowienia ogólne</p>
-                            <p>Niniejszy regulamin określa zasady uczestnictwa w wydarzeniu Power of You oraz warunki korzystania z systemu rejestracji uczestników przy użyciu technologii RFID. Przystąpienie do rejestracji jest równoznaczne z akceptacją niniejszego regulaminu w całości. Organizator zastrzega sobie prawo do odmowy rejestracji bez podania przyczyny.</p>
-                            <p>§2. Dane osobowe</p>
-                            <p>Administratorem danych osobowych jest organizator wydarzenia. Dane zbierane podczas rejestracji (imię, adres e-mail, grupa wiekowa, płeć) wykorzystywane są wyłącznie w celu obsługi uczestnictwa w wydarzeniu. Dane nie będą udostępniane podmiotom trzecim bez zgody uczestnika. Uczestnik ma prawo wglądu do swoich danych oraz ich usunięcia po zakończeniu wydarzenia poprzez kontakt z organizatorem.</p>
-                            <p>§3. Uczestnictwo</p>
-                            <p>Uczestnik zobowiązuje się do przestrzegania zasad obowiązujących na terenie wydarzenia oraz stosowania się do poleceń organizatora i obsługi. Organizator ma prawo do usunięcia uczestnika z wydarzenia w przypadku naruszenia regulaminu, zachowania niezgodnego z prawem lub zakłócania porządku, bez prawa do zwrotu kosztów.</p>
-                            <p>§4. Opaska RFID</p>
-                            <p>Opaska RFID wydana uczestnikowi jest własnością organizatora i podlega zwrotowi po zakończeniu wydarzenia. Uczestnik ponosi odpowiedzialność materialną za zagubienie lub celowe uszkodzenie opaski. Opaska służy wyłącznie do identyfikacji uczestnika w systemie rejestracji i nie uprawnia do żadnych dodatkowych świadczeń poza określonymi przez organizatora.</p>
-                            <p>§5. Wizerunek</p>
-                            <p>Uczestnik wyraża zgodę na nieodpłatne utrwalanie i wykorzystanie swojego wizerunku w materiałach fotograficznych i filmowych wykonanych podczas wydarzenia w celach dokumentacyjnych i promocyjnych organizatora, w tym publikację w mediach społecznościowych i materiałach marketingowych.</p>
-                            <p>§6. Odpowiedzialność</p>
-                            <p>Organizator nie ponosi odpowiedzialności za rzeczy osobiste uczestników pozostawione lub zgubione na terenie wydarzenia. Uczestnik bierze udział w wydarzeniu na własną odpowiedzialność. Organizator zapewnia warunki bezpieczeństwa zgodne z obowiązującymi przepisami prawa.</p>
-                            <p>§7. Reklamacje</p>
-                            <p>Wszelkie reklamacje dotyczące przebiegu rejestracji lub uczestnictwa w wydarzeniu należy zgłaszać do organizatora w terminie 7 dni od zakończenia wydarzenia drogą elektroniczną. Organizator rozpatruje reklamacje w ciągu 14 dni roboczych od daty ich otrzymania.</p>
-                            <p>§8. Postanowienia końcowe</p>
-                            <p>Organizator zastrzega sobie prawo do zmiany regulaminu z co najmniej 24-godzinnym wyprzedzeniem. Uczestnik akceptując regulamin wyraża zgodę na przetwarzanie danych osobowych zgodnie z obowiązującymi przepisami prawa, w tym z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 (RODO). W sprawach nieuregulowanych niniejszym regulaminem zastosowanie mają przepisy Kodeksu Cywilnego.</p>
+                            <p>Administratorami danych osobowych są wspólnie L'Oréal Polska sp. z o.o. oraz NVLV Studio Dominik Wyszyński.</p>
+                            <p>Podane dane (imię, adres e-mail, płeć oraz grupa wiekowa) są zbierane w celu przygotowania analizy i raportu z wydarzenia oraz mogą zostać udostępnione L'Oréal Polska sp. z o.o. w związku z organizacją wydarzenia.</p>
+                            <p>Dane są przechowywane lokalnie na urządzeniach administratorów przez okres nie dłuższy niż 12 miesięcy.</p>
+                            <p>Podstawą przetwarzania danych jest zgoda wyrażona poprzez zaznaczenie checkboxa oraz przejście do kolejnego kroku.</p>
+                            <p>Osobie, której dane dotyczą, przysługuje prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania oraz wniesienia sprzeciwu.</p>
+                            <p>Kontakt w sprawach dotyczących danych: personal-da@loreal.com.</p>
+                            <p>Osoby poniżej 18 roku życia powinny korzystać z formularza za zgodą opiekuna.</p>
                         </div>
                         <button className="btn btn-primary modal-btn" onClick={() => setRegulaminOpen(false)}>
                             Zamknij

@@ -717,14 +717,6 @@
     margin: 0 0 14px;
 }
 
-.regulamin-content p:nth-child(odd) {
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--rose-gold-light);
-    margin-bottom: 6px;
-}
 
 .regulamin-modal .modal-btn {
     align-self: center;
